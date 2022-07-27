@@ -166,7 +166,7 @@ public class JWTSolution implements IAuth {
                     .sign(algorithm);
         } catch (Exception e) {//JWTCreationException – if the claims could not be converted to a valid JSON or there was a problem with the signing key.
             e.printStackTrace(); // Log sign error, if fully tested, should not reach here.
-            throw e;// make caller aware
+            throw e;// make caller aware, should not reach here
         }
         invalidatedTokens.invalidate(token);// remove invalidatedTokens for safety, not necessary
         return token;
@@ -194,7 +194,7 @@ public class JWTSolution implements IAuth {
         String username = jwt.getClaim("username").asString();
         if (!users.containsKey(username)){
             System.out.printf("token secret maybe is leaked!! or maybe user '%s' is deleted accidentally %n", username);
-            return;
+            return;// should not reach here
         }
         User user = users.get(username);
         invalidatedTokens.put(token, user);
@@ -216,7 +216,7 @@ public class JWTSolution implements IAuth {
         String username = jwt.getClaim("username").asString();
         if (!users.containsKey(username)){
             System.out.printf("token secret maybe is leaked!! or maybe user '%s' is deleted accidentally %n", username);
-            return false;
+            return false;// should not reach here
         }
         User user = users.get(username);
         return user.hasRole(role);
@@ -237,7 +237,7 @@ public class JWTSolution implements IAuth {
         String username = jwt.getClaim("username").asString();
         if (!users.containsKey(username)){
             System.out.printf("token secret maybe is leaked!! or maybe user '%s' is deleted accidentally %n", username);
-            throw new RuntimeException("error: token invalid");
+            throw new RuntimeException("error: token invalid");// should not reach here
         }
         User user = users.get(username);
         return user.getAllRoles();

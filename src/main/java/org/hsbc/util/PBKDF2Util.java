@@ -36,7 +36,7 @@ public class PBKDF2Util {
      * @return hash signature
      */
     public static String encryptPassword(String password, String salt) {
-        if(password == null){
+        if(password == null){// user input password may be null
             password = "";
         }
         KeySpec spec = new PBEKeySpec(password.toCharArray(), salt.getBytes(), PBKDF2_ITERATIONS, HASH_BIT_SIZE);
@@ -45,10 +45,8 @@ public class PBKDF2Util {
         try {
             f = SecretKeyFactory.getInstance(PBKDF2_ALGORITHM);
             result = f.generateSecret(spec).getEncoded();
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e); // PBKDF2_ALGORITHM is a constant, should not reach here
-        } catch (InvalidKeySpecException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new RuntimeException(e);// should not reach here
         }
         return toHex(result);
     }
@@ -69,13 +67,13 @@ public class PBKDF2Util {
     }
 
     //Some tests in main
-    public static void main(String[] args) {
-//        String password = null;
-        String password = "Abcd1234";
-        String salt = StringUtil.randomString(8);
-        String dbPassword = encryptPassword(password, salt);
-        System.out.println(dbPassword);
-//        password = "Abcd123";
-        System.out.println(checkPassword(password, salt, dbPassword));
-    }
+//    public static void main(String[] args) {
+////        String password = null;
+//        String password = "Abcd1234";
+//        String salt = StringUtil.randomString(8);
+//        String dbPassword = encryptPassword(password, salt);
+//        System.out.println(dbPassword);
+////        password = "Abcd123";
+//        System.out.println(checkPassword(password, salt, dbPassword));
+//    }
 }
