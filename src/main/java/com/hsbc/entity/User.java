@@ -11,10 +11,16 @@ import java.util.concurrent.ConcurrentHashMap;
 public class User {
     private final String username;//username as well as user id.
     private final String password;//encrypted password.
-    private final String salt;//thanks to the salt, same cleartext passwords will generate different encrypted password.
+    private String salt;// no need to save salt
 
     private final Map<String, Role> roles = new ConcurrentHashMap<>();//current user authorized roles
 
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    @Deprecated
     public User(String username, String password, String salt) {
         this.username = username;
         this.password = password;

@@ -22,6 +22,7 @@ public class StringUtil {
      * @param length the length of return string
      * @return random string with length of input "length".
      */
+    @Deprecated
     public static String randomString(int length){
         String str="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         Random random = new Random();

@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f71b077d-c7fb-4ca3-9976-5fca59257e1c" name="Changes" comment="rename package">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hsbc/util/PasswordUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hsbc/JWTSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hsbc/JWTSolution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hsbc/api/IAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hsbc/api/IAuth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hsbc/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hsbc/entity/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hsbc/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hsbc/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hsbc/util/PBKDF2Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hsbc/util/PBKDF2Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/hsbc/util/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hsbc/util/StringUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/JWTSolutionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/JWTSolutionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hsbc/JWTSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hsbc/JWTSolution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hsbc/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hsbc/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hsbc/util/PBKDF2Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hsbc/util/PBKDF2Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hsbc/util/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hsbc/util/StringUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +127,7 @@
       <updated>1658821116779</updated>
       <workItem from="1658821119141" duration="46191000" />
       <workItem from="1658911149158" duration="10237000" />
-      <workItem from="1659611089897" duration="1062000" />
+      <workItem from="1659611089897" duration="3796000" />
     </task>
     <task id="LOCAL-00001" summary="add some comment">
       <created>1658916294692</created>
@@ -138,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658916294692</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="rename package">
+      <created>1659612303817</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1659612303817</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +167,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/backend$JWTSolutionTest.ic" NAME="JWTSolutionTest Coverage Results" MODIFIED="1658909085389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/hsbc_backend$JWTSolutionTest.ic" NAME="JWTSolutionTest Coverage Results" MODIFIED="1658915389656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/hsbc_backend$JWTSolutionTest.ic" NAME="JWTSolutionTest Coverage Results" MODIFIED="1659614796596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

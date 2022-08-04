@@ -12,6 +12,7 @@ import com.hsbc.api.IAuth;
 import com.hsbc.entity.Role;
 import com.hsbc.entity.User;
 import com.hsbc.util.PBKDF2Util;
+import com.hsbc.util.PasswordUtil;
 import com.hsbc.util.StringUtil;
 
 import java.util.Date;
@@ -57,9 +58,10 @@ public class JWTSolution implements IAuth {
             throw new RuntimeException(String.format("User '%s' already exists!", username));
         }
         // not safe, do we need user phone?
-        String salt = StringUtil.randomString(8);//generate random string as salt
-        String encryptedPassword = PBKDF2Util.encryptPassword(password, salt);//slow hash of algorithm PBKDF2
-        User user = new User(username, encryptedPassword, salt);//save encryptedPassword and salt in storage
+//        String salt = StringUtil.randomString(8);//generate random string as salt
+//        String encodedPassword = PBKDF2Util.encryptPassword(password, salt);//slow hash of algorithm PBKDF2
+        String encodedPassword = PasswordUtil.encode(password);
+        User user = new User(username, encodedPassword);//save encryptedPassword and salt in storage
         users.put(username, user);
         return true;
     }
@@ -150,7 +152,10 @@ public class JWTSolution implements IAuth {
             throw new RuntimeException("error: user or password error!");
         }
         User user = users.get(username);
-        if(!PBKDF2Util.checkPassword(password, user.getSalt(), user.getPassword())){
+//        if(!PBKDF2Util.checkPassword(password, user.getSalt(), user.getPassword())){
+//            throw new RuntimeException("error: user or password error!");
+//        }
+        if(!PasswordUtil.matches(password, user.getPassword())){
             throw new RuntimeException("error: user or password error!");
         }
         Date expireDate = new Date(System.currentTimeMillis() + VALID_PERIOD);

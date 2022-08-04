@@ -9,6 +9,7 @@ import java.security.spec.KeySpec;
  * Utility for algorithm PBKDF2 to sign password
  * @author Leen Li
  */
+@Deprecated
 public class PBKDF2Util {
     //Constants
     private static final String PBKDF2_ALGORITHM = "PBKDF2WithHmacSHA1";
