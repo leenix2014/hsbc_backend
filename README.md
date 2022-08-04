@@ -14,8 +14,8 @@ file introduction:
 src/main/java/IAuth: clean api of all demanded interfaces.  
 src/main/java/Role: class of business entity role.  
 src/main/java/User: class of business entity user.  
-src/main/java/PBKDF2Util: utility of algorithm PBKDF2 to sign user password.  
-src/main/java/StringUtil: utility of string, mainly purpose is to get a random string for password as salt.  
+src/main/java/PasswordUtil: use spring security crypto to encode password.    
+src/main/java/StringUtil: utility of string.  
 src/main/java/JWTSolution: implementation of IAuth using method JWT.  
 src/test/java/JWTSolutionTest: thoroughly test of JWTSolution including token expiry.  
 
@@ -27,6 +27,8 @@ JWTSolutionTest: should be the entry point of readers;
 external libraries  
 java-jwt: to generate jwt tokens.  
 guava: cache tokens with expiry time to prevent memory leak, if possible, use redis instead  
+spring-security-crypto: encode password in default algorithm bcrypt.
+commons-logging: spring-security-crypto depends on it.  
 
 external test libraries  
 junit-jupiter: junit5 test library  

@@ -11,7 +11,6 @@ import com.google.common.cache.CacheBuilder;
 import com.hsbc.api.IAuth;
 import com.hsbc.entity.Role;
 import com.hsbc.entity.User;
-import com.hsbc.util.PBKDF2Util;
 import com.hsbc.util.PasswordUtil;
 import com.hsbc.util.StringUtil;
 
@@ -58,8 +57,6 @@ public class JWTSolution implements IAuth {
             throw new RuntimeException(String.format("User '%s' already exists!", username));
         }
         // not safe, do we need user phone?
-//        String salt = StringUtil.randomString(8);//generate random string as salt
-//        String encodedPassword = PBKDF2Util.encryptPassword(password, salt);//slow hash of algorithm PBKDF2
         String encodedPassword = PasswordUtil.encode(password);
         User user = new User(username, encodedPassword);//save encryptedPassword and salt in storage
         users.put(username, user);
@@ -152,9 +149,6 @@ public class JWTSolution implements IAuth {
             throw new RuntimeException("error: user or password error!");
         }
         User user = users.get(username);
-//        if(!PBKDF2Util.checkPassword(password, user.getSalt(), user.getPassword())){
-//            throw new RuntimeException("error: user or password error!");
-//        }
         if(!PasswordUtil.matches(password, user.getPassword())){
             throw new RuntimeException("error: user or password error!");
         }

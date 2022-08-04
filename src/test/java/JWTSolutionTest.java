@@ -25,7 +25,7 @@ public class JWTSolutionTest {
     // global created users and roles.
     private static final String USER1 = "Leen Li";
     private static final String USER2 = "HSBC";
-    private static final String PWD1 = "123";//user1 password
+    private static final String PWD1 = "password";//user1 password
     private static final String PWD2 = "hsbc";//user2 password
     private static final String ROLE1 = "Developer";//user1 role
     private static final String ROLE2 = "Admin";//user2 role
