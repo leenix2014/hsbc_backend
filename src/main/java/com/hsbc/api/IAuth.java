@@ -1,4 +1,4 @@
-package org.hsbc.api;
+package com.hsbc.api;
 
 import java.util.Set;
 

@@ -1,4 +1,4 @@
-package org.hsbc.entity;
+package com.hsbc.entity;
 
 /**
  * Business entity "role"

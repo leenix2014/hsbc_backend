@@ -1,6 +1,6 @@
 import com.auth0.jwt.exceptions.TokenExpiredException;
-import org.hsbc.JWTSolution;
-import org.hsbc.api.IAuth;
+import com.hsbc.JWTSolution;
+import com.hsbc.api.IAuth;
 import org.junit.jupiter.api.*;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
@@ -192,10 +192,10 @@ public class JWTSolutionTest {
         roleSet1.add(ROLE1);
         assertEquals(roleSet1, jwt.myRoles(token1));
 
-        /** Mock Clock.systemUTC().instant()
-         *  JWTVerifier use Clock.systemUTC() to initialize instance variable clock, see JWTVerifier.java:272
-         *  JWTVerifier use clock.instant() to get now, see JWTVerifier.java:337
-         *  So we need to mock Clock.systemUTC() and clock.instant() to cheat JWTVerifier
+        /* Mock Clock.systemUTC().instant()
+         * JWTVerifier use Clock.systemUTC() to initialize instance variable clock, see JWTVerifier.java:272
+         * JWTVerifier use clock.instant() to get now, see JWTVerifier.java:337
+         * So we need to mock Clock.systemUTC() and clock.instant() to cheat JWTVerifier
          */
         // generate a fake time
         long fakeNow = new SimpleDateFormat("yyyy-MM-dd").parse("2030-08-01").getTime();

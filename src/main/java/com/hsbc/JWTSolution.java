@@ -1,21 +1,23 @@
-package org.hsbc;
+package com.hsbc;
 
 import com.auth0.jwt.HeaderParams;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.auth0.jwt.exceptions.SignatureVerificationException;
 import com.auth0.jwt.exceptions.TokenExpiredException;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
-import org.hsbc.api.IAuth;
-import org.hsbc.entity.Role;
-import org.hsbc.entity.User;
-import org.hsbc.util.PBKDF2Util;
-import org.hsbc.util.StringUtil;
+import com.hsbc.api.IAuth;
+import com.hsbc.entity.Role;
+import com.hsbc.entity.User;
+import com.hsbc.util.PBKDF2Util;
+import com.hsbc.util.StringUtil;
 
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
@@ -54,7 +56,7 @@ public class JWTSolution implements IAuth {
         if(users.containsKey(username)){
             throw new RuntimeException(String.format("User '%s' already exists!", username));
         }
-        // not safe, do we need user login?
+        // not safe, do we need user phone?
         String salt = StringUtil.randomString(8);//generate random string as salt
         String encryptedPassword = PBKDF2Util.encryptPassword(password, salt);//slow hash of algorithm PBKDF2
         User user = new User(username, encryptedPassword, salt);//save encryptedPassword and salt in storage

@@ -1,6 +1,5 @@
-package org.hsbc.entity;
+package com.hsbc.entity;
 
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
@@ -12,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class User {
     private final String username;//username as well as user id.
     private final String password;//encrypted password.
-    private final String salt;//thanks for the salt, same cleartext passwords will generate different encrypted password.
+    private final String salt;//thanks to the salt, same cleartext passwords will generate different encrypted password.
 
     private final Map<String, Role> roles = new ConcurrentHashMap<>();//current user authorized roles
 

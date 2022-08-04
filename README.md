@@ -11,13 +11,13 @@ mainly business:
 7、invalidate token;【logout】  
 
 file introduction:  
-src/main/java/org.hsbc.api.IAuth, clean api of all demanded interfaces.  
-src/main/java/org.hsbc.entity.Role, class of business entity role.  
-src/main/java/org.hsbc.entity.User, class of business entity user.  
-src/main/java/org.hsbc.util.PBKDF2Util, utility of algorithm PBKDF2 to sign user password.  
-src/main/java/org.hsbc.util.StringUtil, utility of string, mainly purpose is to get a random string for password as salt.  
-src/main/java/org.hsbc.JWTSolution, implementation of IAuth using method JWT.  
-test/java/JWTSolutionTest, thoroughly test of JWTSolution including token expiry.  
+src/main/java/IAuth: clean api of all demanded interfaces.  
+src/main/java/Role: class of business entity role.  
+src/main/java/User: class of business entity user.  
+src/main/java/PBKDF2Util: utility of algorithm PBKDF2 to sign user password.  
+src/main/java/StringUtil: utility of string, mainly purpose is to get a random string for password as salt.  
+src/main/java/JWTSolution: implementation of IAuth using method JWT.  
+src/test/java/JWTSolutionTest: thoroughly test of JWTSolution including token expiry.  
 
 important files:  
 IAuth: tells us how the interfaces is designed;  

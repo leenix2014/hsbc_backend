@@ -1,4 +1,4 @@
-package org.hsbc.util;
+package com.hsbc.util;
 
 import java.util.Random;
 
