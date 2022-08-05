@@ -58,7 +58,7 @@ public class JWTSolution implements IAuth {
         }
         // not safe, do we need user phone?
         String encodedPassword = PasswordUtil.encode(password);
-        User user = new User(username, encodedPassword);//save encryptedPassword and salt in storage
+        User user = new User(username, encodedPassword);//save encoded password in storage
         users.put(username, user);
         return true;
     }

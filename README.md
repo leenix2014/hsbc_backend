@@ -1,7 +1,7 @@
 # hsbc_backend
 hsbc homework of authentication and authorization  
 
-mainly business:  
+main business:  
 1、create/delete User;  
 2、create/delete Role;  
 3、add role to user;  
